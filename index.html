@@ -368,6 +368,8 @@
 				return array[Math.floor(rand() * array.length) % array.length];
 			}
 
+			const names = [];
+
 			function name_generator(min_length, max_length)
 			{
 				const length = Math.floor(rand() * (max_length - min_length) + min_length);
@@ -379,6 +381,9 @@
 					result += rand_choose(is_vowel ? vowels : consonants);
 					is_vowel = !is_vowel;
 				}
+
+				if (names.indexOf(result) >= 0) return name_generator(min_length, max_length);
+				names.push(result);
 
 				if (result.length === 1) return result[0].toUpperCase();
 				else return result[0].toUpperCase() + result.slice(1);
