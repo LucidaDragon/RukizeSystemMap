@@ -545,7 +545,7 @@
 								jump_map.set(star, destination);
 								const jump = jump_line(x1, y1, x2, y2);
 								hyperjumps.push(jump);
-								add_text(jump, star.getAttribute("data-name") + " -> " + destination.getAttribute("data-name"));
+								add_text(jump, star.getAttribute("data-name") + " <-> " + destination.getAttribute("data-name"));
 							}
 						}
 					});
@@ -554,7 +554,7 @@
 						jump_map.set(star, closest);
 						const jump = jump_line(x1, y1, closest_x, closest_y);
 						hyperjumps.push(jump);
-						add_text(jump, star.getAttribute("data-name") + " -> " + closest.getAttribute("data-name"));
+						add_text(jump, star.getAttribute("data-name") + " <-> " + closest.getAttribute("data-name"));
 					}
 				});
 			}
